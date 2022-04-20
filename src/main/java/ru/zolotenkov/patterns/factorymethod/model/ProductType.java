@@ -1,2 +1,6 @@
-package ru.zolotenkov.patterns.factorymethod.model;public enum ProductType {
+package ru.zolotenkov.patterns.factorymethod.model;
+
+public enum ProductType {
+  SMARTPHONE,
+  NOTEBOOK
 }

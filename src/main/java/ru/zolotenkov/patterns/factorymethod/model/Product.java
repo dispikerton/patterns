@@ -1,5 +1,6 @@
-package ru.zolotenkov.patterns.factorymethod;
+package ru.zolotenkov.patterns.factorymethod.model;
+
 
 public interface Product {
-  void doStuff();
+  void sayYourName();
 }
