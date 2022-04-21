@@ -5,7 +5,7 @@ public class Main {
     Movable bugattiVeyron = new BugattiVeyron();
     System.out.println(bugattiVeyron.getSpeed());
 
-    Movable movableAdapter = new MovableAdapterImpl(bugattiVeyron);
+    Movable movableAdapter = new MovableAdapter(bugattiVeyron);
     System.out.println(movableAdapter.getSpeed());
   }
 }
