@@ -1,9 +1,9 @@
 package ru.zolotenkov.patterns.adapter.real2;
 
 public class Rower {
-  private final RowingBoat rowingBoat;
+  private final Rowing rowingBoat;
 
-  public Rower(RowingBoat rowingBoat) {
+  public Rower(Rowing rowingBoat) {
     this.rowingBoat = rowingBoat;
   }
 

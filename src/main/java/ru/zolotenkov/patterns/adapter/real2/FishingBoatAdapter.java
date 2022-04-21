@@ -1,6 +1,11 @@
 package ru.zolotenkov.patterns.adapter.real2;
 
-public class FishingBoatAdapter extends RowingBoat {
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+public class FishingBoatAdapter implements Rowing {
+
+  private final Logger logger = LoggerFactory.getLogger(FishingBoatAdapter.class);
   private final FishingBoat boat;
 
   public FishingBoatAdapter(FishingBoat boat) {
@@ -8,8 +13,8 @@ public class FishingBoatAdapter extends RowingBoat {
   }
 
   @Override
-  void row() {
+  public void row() {
     boat.takeFish();
-    System.out.println("а потом погреб");
+    logger.info("а потом погреб");
   }
 }

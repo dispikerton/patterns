@@ -1,8 +1,13 @@
 package ru.zolotenkov.patterns.adapter.real2;
 
-public class RowingBoat {
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-  void row() {
-    System.out.println("Ебашим веслом");
+public class RowingBoat implements Rowing{
+  private final Logger logger = LoggerFactory.getLogger(RowingBoat.class);
+
+  @Override
+  public void row() {
+    logger.info("Ебашим веслом");
   }
 }
