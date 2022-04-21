@@ -1,18 +1,18 @@
 package ru.zolotenkov.patterns.factorymethod.creator;
 
-import ru.zolotenkov.patterns.factorymethod.AnotherImplementationException;
 import ru.zolotenkov.patterns.factorymethod.model.Notebook;
 import ru.zolotenkov.patterns.factorymethod.model.Product;
 import ru.zolotenkov.patterns.factorymethod.model.ProductType;
+import ru.zolotenkov.patterns.factorymethod.model.Smartphone;
 
-public class NotebookCreator implements Creator {
-  @Override
-  public Product factoryMethod() {
-    return new Notebook();
-  }
+public class SamsungCreator implements Creator {
 
   @Override
   public Product factoryMethod(ProductType productType) {
-    throw new AnotherImplementationException("Другая реализация шаблона");
+    if (productType.equals(ProductType.NOTEBOOK)){
+      return new Notebook(OS.WINDOWS);
+    }else {
+      return new Smartphone(OS.ANDROID);
+    }
   }
 }
