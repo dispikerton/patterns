@@ -1,4 +1,4 @@
-package ru.zolotenkov.patterns.adapter.real2;
+package ru.zolotenkov.patterns.adapter;
 
 public class Rower {
   private final Rowing rowingBoat;

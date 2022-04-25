@@ -1,4 +1,4 @@
-package ru.zolotenkov.patterns.adapter.real2;
+package ru.zolotenkov.patterns.adapter;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
