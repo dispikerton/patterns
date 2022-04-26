@@ -3,15 +3,15 @@ package ru.zolotenkov.patterns.command;
 import org.springframework.stereotype.Component;
 
 @Component
-public class DepositCommand implements Command {
+public class CancelCommand implements Command{
   private final Bank bank;
 
-  public DepositCommand(Bank bank) {
+  public CancelCommand(Bank bank) {
     this.bank = bank;
   }
 
   @Override
   public void execute(CommandInfo info) {
-    bank.deposit(info.getAccount(), info.getAmount());
+    bank.cancelTransaction(info.getTransactionId());
   }
 }

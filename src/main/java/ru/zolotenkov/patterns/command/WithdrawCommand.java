@@ -11,7 +11,7 @@ public class WithdrawCommand implements Command {
   }
 
   @Override
-  public void execute(String account, Long amount) {
-    bank.withdraw(account, amount);
+  public void execute(CommandInfo info) {
+    bank.withdraw(info.getAccount(), info.getAmount());
   }
 }

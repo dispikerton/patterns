@@ -15,4 +15,8 @@ public class Bank {
   public void withdraw(String account, Long amount) {
     logger.info("Со счёта {} списано {} денег", account, amount);
   }
+
+  public void cancelTransaction(String transactionId) {
+    logger.info("Откатываю транзакцию под номером {}", transactionId);
+  }
 }

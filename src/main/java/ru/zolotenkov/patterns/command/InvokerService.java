@@ -2,21 +2,22 @@ package ru.zolotenkov.patterns.command;
 
 import java.util.Map;
 
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
-@Component
-public class Invoker {
+@Service
+public class InvokerService {
   private final Map<String, Command> commandMap;
 
-  public Invoker(Map<String, Command> commandMap) {
+  public InvokerService(Map<String, Command> commandMap) {
     this.commandMap = commandMap;
   }
 
-  public void execute(String commandName, String account, Long amount) {
+  public void execute(CommandInfo info) {
+    String commandName = info.getCommandName();
     Command command = commandMap.get(commandName);
     if (command == null) {
       throw new IllegalStateException("no command registered for " + commandName);
     }
-    command.execute(account, amount);
+    command.execute(info);
   }
 }
