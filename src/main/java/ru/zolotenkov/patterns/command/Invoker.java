@@ -12,11 +12,11 @@ public class Invoker {
     this.commandMap = commandMap;
   }
 
-  public void execute(String commandName) {
+  public void execute(String commandName, String account, Long amount) {
     Command command = commandMap.get(commandName);
     if (command == null) {
       throw new IllegalStateException("no command registered for " + commandName);
     }
-    command.execute();
+    command.execute(account, amount);
   }
 }

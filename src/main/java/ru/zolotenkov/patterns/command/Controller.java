@@ -14,7 +14,9 @@ public class Controller {
   }
 
   @GetMapping
-  public void executeCommand(@RequestParam String commandName) {
-    invoker.execute(commandName);
+  public void executeCommand(@RequestParam String commandName,
+                             @RequestParam String account,
+                             @RequestParam Long amount) {
+    invoker.execute(commandName, account, amount);
   }
 }
