@@ -3,7 +3,7 @@ package ru.zolotenkov.patterns.command;
 import org.springframework.stereotype.Component;
 
 @Component
-public class CancelCommand implements Command{
+public class CancelCommand implements Command {
   private final Bank bank;
 
   public CancelCommand(Bank bank) {
