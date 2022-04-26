@@ -7,14 +7,14 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class Controller {
 
-  private final Switch switcher;
+  private final Invoker invoker;
 
-  public Controller(Switch switcher) {
-    this.switcher = switcher;
+  public Controller(Invoker invoker) {
+    this.invoker = invoker;
   }
 
   @GetMapping
   public void executeCommand(@RequestParam String commandName) {
-    switcher.execute(commandName);
+    invoker.execute(commandName);
   }
 }

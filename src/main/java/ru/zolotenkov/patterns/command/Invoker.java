@@ -5,10 +5,10 @@ import java.util.Map;
 import org.springframework.stereotype.Component;
 
 @Component
-public class Switch {
+public class Invoker {
   private final Map<String, Command> commandMap;
 
-  public Switch(Map<String, Command> commandMap) {
+  public Invoker(Map<String, Command> commandMap) {
     this.commandMap = commandMap;
   }
 
