@@ -4,6 +4,8 @@ import java.util.Map;
 
 import org.springframework.stereotype.Service;
 
+import ru.zolotenkov.patterns.command.command.Command;
+
 @Service
 public class InvokerService {
   private final Map<String, Command> commandMap;
@@ -12,7 +14,7 @@ public class InvokerService {
     this.commandMap = commandMap;
   }
 
-  public void execute(CommandInfo info) {
+  public void executeCommand(CommandInfo info) {
     String commandName = info.getCommandName();
     Command command = commandMap.get(commandName);
     if (command == null) {
