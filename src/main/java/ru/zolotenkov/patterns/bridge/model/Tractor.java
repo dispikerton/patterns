@@ -12,6 +12,8 @@ public abstract class Tractor {
 
     public abstract void move();
 
+    public abstract void load();
+
     public Trailer getTrailer() {
         return trailer;
     }

@@ -17,4 +17,9 @@ public class Saddle extends Tractor {
     public void move() {
         logger.info("Saddle moving");
     }
+
+    @Override
+    public void load() {
+        getTrailer().load();
+    }
 }

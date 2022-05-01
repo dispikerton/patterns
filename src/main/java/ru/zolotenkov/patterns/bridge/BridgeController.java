@@ -8,7 +8,6 @@ import ru.zolotenkov.patterns.bridge.model.*;
 
 @RestController
 public class BridgeController {
-    private final Logger logger = LoggerFactory.getLogger(BridgeController.class);
 
     @GetMapping("/bridge/start")
     public void create() {
@@ -16,9 +15,9 @@ public class BridgeController {
         Tractor saddle = new Saddle(new Curtainsider());
         Trailer refrigerator = new Refrigerator();
         towing.setTrailer(refrigerator);
-        logger.info(towing.getClass().getName());
-        logger.info(saddle.getClass().getName());
-        logger.info(towing.getTrailer().getClass().getName());
-        logger.info(saddle.getTrailer().getClass().getName());
+        saddle.load();
+        saddle.move();
+        towing.load();
+        towing.move();
     }
 }

@@ -5,7 +5,7 @@ import org.slf4j.LoggerFactory;
 
 public class Towing extends Tractor {
 
-    private final Logger logger = LoggerFactory.getLogger(Saddle.class);
+    private final Logger logger = LoggerFactory.getLogger(Towing.class);
 
     public Towing() {
     }
@@ -17,5 +17,10 @@ public class Towing extends Tractor {
     @Override
     public void move() {
         logger.info("Towing moving");
+    }
+
+    @Override
+    public void load() {
+        getTrailer().load();
     }
 }
