@@ -14,11 +14,11 @@ public abstract class Tractor {
 
     public abstract void load();
 
-    public Trailer getTrailer() {
+    protected Trailer getTrailer() {
         return trailer;
     }
 
-    public void setTrailer(Trailer trailer) {
+    public void installTrailer(Trailer trailer) {
         this.trailer = trailer;
     }
 }
