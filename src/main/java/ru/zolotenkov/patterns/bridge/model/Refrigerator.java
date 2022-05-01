@@ -9,6 +9,5 @@ public class Refrigerator extends Trailer {
     @Override
     public void load() {
         logger.info("Load refrigerator");
-
     }
 }
