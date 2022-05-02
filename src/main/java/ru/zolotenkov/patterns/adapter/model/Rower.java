@@ -1,4 +1,4 @@
-package ru.zolotenkov.patterns.adapter;
+package ru.zolotenkov.patterns.adapter.model;
 
 public class Rower {
   private final Rowing rowingBoat;
@@ -7,7 +7,7 @@ public class Rower {
     this.rowingBoat = rowingBoat;
   }
 
-  void rowOnBoat(){
+  public void rowOnBoat(){
     rowingBoat.row();
   }
 
