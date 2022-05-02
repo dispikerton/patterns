@@ -22,4 +22,10 @@ public class BrickIterator implements Iterator<Brick> {
         int randomBrick = new Random().nextInt(pileOfBricks.size());
         return pileOfBricks.remove(randomBrick);
     }
+
+    @Override
+    public void remove() {
+        int randomBrick = new Random().nextInt(pileOfBricks.size());
+        pileOfBricks.remove(randomBrick);
+    }
 }
