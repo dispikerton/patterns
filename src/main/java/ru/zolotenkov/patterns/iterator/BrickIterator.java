@@ -19,7 +19,7 @@ public class BrickIterator implements Iterator<Brick> {
 
     @Override
     public Brick next() {
-        int randomStone = new Random().nextInt(pileOfBricks.size());
-        return pileOfBricks.remove(randomStone);
+        int randomBrick = new Random().nextInt(pileOfBricks.size());
+        return pileOfBricks.remove(randomBrick);
     }
 }
