@@ -1,4 +1,4 @@
-package ru.zolotenkov.patterns.chainofresponsibility;
+package ru.zolotenkov.patterns.chainofresponsibility.handler;
 
 import org.springframework.stereotype.Component;
 

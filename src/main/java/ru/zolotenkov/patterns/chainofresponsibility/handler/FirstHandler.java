@@ -1,4 +1,4 @@
-package ru.zolotenkov.patterns.chainofresponsibility;
+package ru.zolotenkov.patterns.chainofresponsibility.handler;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
