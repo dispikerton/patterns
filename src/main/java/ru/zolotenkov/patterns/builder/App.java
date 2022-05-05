@@ -2,9 +2,6 @@ package ru.zolotenkov.patterns.builder;
 
 import java.util.List;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import lombok.extern.java.Log;
 import ru.zolotenkov.patterns.builder.model.Basement;
 import ru.zolotenkov.patterns.builder.model.Elevator;
