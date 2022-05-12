@@ -1,16 +1,22 @@
 package ru.zolotenkov.patterns.composite;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class App {
+  private static final Logger logger = LoggerFactory.getLogger(App.class);
+
   public static void main(String[] args) {
-    Container container = new Composite();
-    container.add(new Component1());
-    container.add(new Component2());
+    Package package1 = new PackageImpl();
+    package1.add(new Sugar());
+    package1.add(new Sugar());
 
-    Container container2 = new Composite();
-    container2.add(new Component1());
-    container2.add(new Component2());
-    container.add(container2);
+    Package package2 = new PackageImpl();
+    package2.add(new Bread());
+    package2.add(new Bread());
 
-    container.execute();
+    package1.add(package2);
+    int price = package1.getPrice();
+    logger.info("price {}", price);
   }
 }
