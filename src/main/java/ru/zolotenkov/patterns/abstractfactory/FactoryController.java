@@ -1,6 +1,7 @@
 package ru.zolotenkov.patterns.abstractfactory;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import ru.zolotenkov.patterns.abstractfactory.factory.Factory;
@@ -8,7 +9,8 @@ import ru.zolotenkov.patterns.abstractfactory.model.Armchair;
 import ru.zolotenkov.patterns.abstractfactory.model.Chair;
 import ru.zolotenkov.patterns.abstractfactory.model.Table;
 
-@RestController("/factory")
+@RestController
+@RequestMapping("/factory")
 public class FactoryController {
   private final Factory factory;
 

@@ -27,6 +27,5 @@ public class DataFacade {
     return Stream.of(jdbcData, elasticData, mongoData)
       .flatMap(Collection::stream)
       .collect(Collectors.toList());
-
   }
 }

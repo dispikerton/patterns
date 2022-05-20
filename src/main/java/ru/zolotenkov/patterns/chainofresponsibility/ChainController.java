@@ -3,10 +3,12 @@ package ru.zolotenkov.patterns.chainofresponsibility;
 import java.util.List;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import ru.zolotenkov.patterns.chainofresponsibility.handler.Handler;
 
-@RestController("/chain")
+@RestController
+@RequestMapping("/chain")
 public class ChainController {
   private final List<Handler> handlers;
 
