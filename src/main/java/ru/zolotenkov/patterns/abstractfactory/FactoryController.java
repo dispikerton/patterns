@@ -8,7 +8,7 @@ import ru.zolotenkov.patterns.abstractfactory.model.Armchair;
 import ru.zolotenkov.patterns.abstractfactory.model.Chair;
 import ru.zolotenkov.patterns.abstractfactory.model.Table;
 
-@RestController
+@RestController("/factory")
 public class FactoryController {
   private final Factory factory;
 

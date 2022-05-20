@@ -4,7 +4,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import ru.zolotenkov.patterns.bridge.model.*;
 
-@RestController
+@RestController("/bridge")
 public class BridgeController {
 
     @GetMapping("/bridge/start")
