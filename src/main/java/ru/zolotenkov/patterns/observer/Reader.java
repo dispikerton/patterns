@@ -10,13 +10,16 @@ public class Reader implements Observer {
   private final Logger logger = LoggerFactory.getLogger(Reader.class);
   private final String name;
 
-  public Reader(String name) {
+  private final String wayToGet;
+
+  public Reader(String name, String wayToGet) {
     this.name = name;
+    this.wayToGet = wayToGet;
   }
 
   @Override
   public void observe() {
-    String info = "Читатель " + name + " получил номер журнала";
+    String info = "Читатель " + name + " получил номер журнала " + wayToGet;
     logger.info(info);
   }
 }
