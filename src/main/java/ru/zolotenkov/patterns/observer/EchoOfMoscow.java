@@ -9,7 +9,7 @@ import org.slf4j.LoggerFactory;
 public class EchoOfMoscow implements Subject {
 
   private final Logger logger = LoggerFactory.getLogger(EchoOfMoscow.class);
-  private final List<Reader> readers = new ArrayList<>();
+  private final List<Observer> readers = new ArrayList<>();
 
   @Override
   public void subscribe(Reader reader) {
@@ -26,6 +26,6 @@ public class EchoOfMoscow implements Subject {
   }
 
   public void sendToAllSubscribers() {
-    readers.forEach(Reader::observe);
+    readers.forEach(Observer::observe);
   }
 }
