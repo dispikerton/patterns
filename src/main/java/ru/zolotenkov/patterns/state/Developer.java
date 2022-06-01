@@ -3,8 +3,8 @@ package ru.zolotenkov.patterns.state;
 public class Developer {
   private State state;
 
-  public Developer(State state) {
-    this.state = state;
+  public Developer() {
+    this.state = new Laze();
   }
 
   public void toDo() {
