@@ -12,7 +12,11 @@ public abstract class Employee {
   abstract void work();
 
   public void doJob() {
-    logger.info("Проверяю почту");
+    checkMail();
     work();
+  }
+
+  public void checkMail(){
+    logger.info("Проверяю почту");
   }
 }
