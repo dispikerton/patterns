@@ -7,7 +7,8 @@ public class App {
   public static void main(String[] args) {
     Employee projectManager = new ProjectManager();
     Employee developer = new Developer();
-    projectManager.doJob();
-    developer.doJob();
+    projectManager.work();
+    log.info("----------");
+    developer.work();
   }
 }

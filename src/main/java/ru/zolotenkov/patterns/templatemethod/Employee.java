@@ -8,14 +8,19 @@ import org.slf4j.LoggerFactory;
 interface Employee {
   Logger logger = LoggerFactory.getLogger(Employee.class);
 
-  void work();
+  void specificWork();
 
-  default void doJob() {
+  default void work() {
     checkMail();
-    work();
+    specificWork();
+    turnOffComputer();
   }
 
   private void checkMail() {
     logger.info("Проверяю почту");
+  }
+
+  private void turnOffComputer() {
+    logger.info("Выключаю компьютер");
   }
 }
