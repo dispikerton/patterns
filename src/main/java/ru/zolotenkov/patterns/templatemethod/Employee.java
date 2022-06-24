@@ -6,15 +6,16 @@ import org.slf4j.LoggerFactory;
 
 
 interface Employee {
-    Logger logger = LoggerFactory.getLogger(Employee.class);
-   void work();
+  Logger logger = LoggerFactory.getLogger(Employee.class);
 
-   default void doJob() {
+  void work();
+
+  default void doJob() {
     checkMail();
     work();
   }
 
-  private void checkMail(){
+  private void checkMail() {
     logger.info("Проверяю почту");
   }
 }
