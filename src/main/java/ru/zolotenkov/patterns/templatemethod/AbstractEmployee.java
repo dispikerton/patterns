@@ -14,7 +14,6 @@ public abstract class AbstractEmployee {
 
   public void work() {
     String info = dao.getInfo();
-    logger.info("Пришла {}", info);
     specificWork(info);
   }
 
