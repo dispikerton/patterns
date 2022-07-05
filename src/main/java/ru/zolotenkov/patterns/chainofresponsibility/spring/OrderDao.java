@@ -4,9 +4,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class OrderDao {
-
-  boolean saveOrder(Order order) {
+  void saveOrder(Order order){
     System.out.println("Заказ сохранен " + order);
-    return true;
   }
 }

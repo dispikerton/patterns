@@ -6,36 +6,36 @@ import org.springframework.stereotype.Service;
 public class OrderService {
   private final OrderDao orderDao;
   private final SmsNotificator smsNotificator;
-  private final InsuranceService insuranceService;
-  private final TestService testService;
-  private final PackageService packageService;
+  private final Insurance insurance;
+  private final TestingDepartment testingDepartment;
+  private final PackagingDepartment packagingDepartment;
 
-  public OrderService(OrderDao orderDao,
-                      SmsNotificator smsNotificator,
-                      InsuranceService insuranceService,
-                      TestService testService,
-                      PackageService packageService) {
+  public OrderService(OrderDao orderDao, SmsNotificator smsNotificator, Insurance insurance, TestingDepartment testingDepartment,
+                      PackagingDepartment packagingDepartment) {
     this.orderDao = orderDao;
     this.smsNotificator = smsNotificator;
-    this.insuranceService = insuranceService;
-    this.testService = testService;
-    this.packageService = packageService;
+    this.insurance = insurance;
+    this.testingDepartment = testingDepartment;
+    this.packagingDepartment = packagingDepartment;
   }
 
   boolean createOrder(Order order) {
+    String orderId = order.getId();
     orderDao.saveOrder(order);
     if (order.isSmsNotification()) {
-      smsNotificator.enableNotifications(order.getId());
+      smsNotificator.enableNotifications(orderId, order.getPhoneNumber());
     }
+
     for (Product product : order.getProducts()) {
+      String productId = product.getId();
       if (product.isInsurance()) {
-        insuranceService.insure(product.getId(), order.getId());
+        insurance.insure(productId, orderId);
       }
       if (product.isTesting()) {
-        testService.testProduct(product.getId(), order.getId());
+        testingDepartment.testProduct(productId, orderId);
       }
       if (product.isFestivePackaging()) {
-        packageService.festivelyPack(product.getId(), order.getId());
+        packagingDepartment.festivelyPack(productId, orderId);
       }
     }
 

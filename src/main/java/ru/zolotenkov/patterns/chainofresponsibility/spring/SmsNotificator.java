@@ -4,7 +4,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class SmsNotificator {
-  void enableNotifications(String orderId) {
-    System.out.println("Включены смс уведомления для заказа номер " + orderId);
+  void enableNotifications(String orderId, String phoneNumber) {
+    System.out.println("Включены смс уведомления для заказа номер " + orderId + " по телефону " + phoneNumber);
   }
 }
