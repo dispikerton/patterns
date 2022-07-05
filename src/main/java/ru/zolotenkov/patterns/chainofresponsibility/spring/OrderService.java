@@ -1,44 +1,24 @@
 package ru.zolotenkov.patterns.chainofresponsibility.spring;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
+
+import ru.zolotenkov.patterns.chainofresponsibility.spring.option.AdditionalOption;
 
 @Service
 public class OrderService {
   private final OrderDao orderDao;
-  private final SmsNotificator smsNotificator;
-  private final Insurance insurance;
-  private final TestingDepartment testingDepartment;
-  private final PackagingDepartment packagingDepartment;
+  private final List<AdditionalOption> options;
 
-  public OrderService(OrderDao orderDao, SmsNotificator smsNotificator, Insurance insurance, TestingDepartment testingDepartment,
-                      PackagingDepartment packagingDepartment) {
+  public OrderService(OrderDao orderDao, List<AdditionalOption> options) {
     this.orderDao = orderDao;
-    this.smsNotificator = smsNotificator;
-    this.insurance = insurance;
-    this.testingDepartment = testingDepartment;
-    this.packagingDepartment = packagingDepartment;
+    this.options = options;
   }
 
   boolean createOrder(Order order) {
-    String orderId = order.getId();
     orderDao.saveOrder(order);
-    if (order.isSmsNotification()) {
-      smsNotificator.enableNotifications(orderId, order.getPhoneNumber());
-    }
-
-    for (Product product : order.getProducts()) {
-      String productId = product.getId();
-      if (product.isInsurance()) {
-        insurance.insure(productId, orderId);
-      }
-      if (product.isTesting()) {
-        testingDepartment.testProduct(productId, orderId);
-      }
-      if (product.isFestivePackaging()) {
-        packagingDepartment.festivelyPack(productId, orderId);
-      }
-    }
-
+    options.forEach(additionalOption -> additionalOption.apply(order));
     return true;
   }
 }
